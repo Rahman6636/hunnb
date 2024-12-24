@@ -1,0 +1,137 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    position: relative;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    animation: logoAnimation 3s infinite;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ff6347;
+}
+
+main {
+    padding: 20px;
+    background-color: #fff;
+    margin: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.intro {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.features {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.feature {
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin: 10px;
+    flex: 1 1 30%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .features {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature {
+        flex: 1 1 80%;
+    }
+}
+
+/* Интерактивные элементы */
+@keyframes logoAnimation {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+nav ul li a {
+    position: relative;
+}
+
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #ff6347;
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s;
+}
+
+nav ul li a:hover::before {
+    width: 100%;
+}
+
+.feature {
+    position: relative;
+    overflow: hidden;
+}
+
+.feature::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 99, 71, 0.2);
+    transition: left 0.5s;
+}
+
+.feature:hover::before {
+    left: 0;
+}
